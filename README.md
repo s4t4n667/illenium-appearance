@@ -7,7 +7,7 @@ A replacement for clothing resources for various frameworks.
 - Added global icon colour option to config
 - Added textUI icon options to config
 
-<div align='center'><h1><a href='https://docs.illenium.dev/free-resources/illenium-appearance/installation/'>Documentation (new docs coming soon)</a></h3></div>
+<div align='center'><h1><a href='https://docs.illenium.dev/free-resources/illenium-appearance/installation/'>Documentation</a></h3></div>
 <br>
 
 <img src="https://i.imgur.com/ltLSMmh.png" alt="illenium-appearance with Tattoos" />
