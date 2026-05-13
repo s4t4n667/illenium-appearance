@@ -1,15 +1,18 @@
 # illenium-appearance
 
-A replacement for clothing resources for various frameworks
+A replacement for clothing resources for various frameworks.
 
-<div align='center'><h1><a href='https://docs.illenium.dev/free-resources/illenium-appearance/installation/'>Documentation</a></h3></div>
+## 🛠️ s4t4n667's edits
+- Added icons to every menu
+- Added global icon colour option to config
+- Added textUI icon options to config
+
+<div align='center'><h1><a href='https://docs.illenium.dev/free-resources/illenium-appearance/installation/'>Documentation (new docs coming soon)</a></h3></div>
 <br>
 
 <img src="https://i.imgur.com/ltLSMmh.png" alt="illenium-appearance with Tattoos" />
 
-Discord: https://discord.illenium.dev
-
-**Note:** Do **NOT** use the `main` branch as it will most likely be broken for you. NO SUPPORT WILL BE PROVIDED IF YOU USE IT. Only use the [latest release](https://github.com/iLLeniumStudios/illenium-appearance/releases/latest)
+Discord: https://discord.illenium.dev (no longer active)
 
 ## Supported Frameworks
 
@@ -18,7 +21,6 @@ Discord: https://discord.illenium.dev
 - ox_core
 
 ## Dependencies
-
 - [qb-core](https://github.com/qbcore-framework/qb-core) (Latest) (Only for qb-core based servers)
 - [es_extended](https://github.com/esx-framework/esx-legacy) (Latest) (Only for ESX based servers)
 - [ox_core](https://github.com/overextended/ox_core) (experimental) (Only for ox_core based servers)
@@ -26,7 +28,6 @@ Discord: https://discord.illenium.dev
 - [qb-target](https://github.com/BerkieBb/qb-target) (Optional) (Only for qb-core based servers)
 
 ## Features
-
 - Everything from standalone fivem-appearance
 - UI from OX Lib
 - Player outfits
