@@ -326,6 +326,8 @@ local function RegisterChangeOutfitMenu(id, parent, outfits, mType)
     for i = 1, #outfits, 1 do
         changeOutfitMenu.options[#changeOutfitMenu.options + 1] = {
             title = outfits[i].name,
+            icon = 'fa-shirt',
+            iconColor = Config.IconColors,
             description = outfits[i].model,
             event = "illenium-appearance:client:changeOutfit",
             args = {
