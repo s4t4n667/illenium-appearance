@@ -131,7 +131,7 @@ function OpenShop(config, isPedMenu, shopType)
             lib.notify({
                 title = "Cannot Enter Shop",
                 description = "Not enough cash. Need $" .. money,
-                type = "error",
+                type = 'error',
                 position = Config.NotifyOptions.position
             })
             return
@@ -147,7 +147,7 @@ function OpenShop(config, isPedMenu, shopType)
                 lib.notify({
                     title = _L("cancelled.title"),
                     description = _L("cancelled.description"),
-                    type = "inform",
+                    type = 'error',
                     position = Config.NotifyOptions.position
                 })
             end
@@ -179,7 +179,7 @@ RegisterNetEvent("illenium-appearance:client:importOutfitCode", function()
             type = "input",
             label = _L("outfits.import.name.label"),
             placeholder = _L("outfits.import.name.placeholder"),
-            default = _L("outfits.import.name.default"),
+            --default = _L("outfits.import.name.default"),
             required = true
         },
         {
@@ -203,14 +203,14 @@ RegisterNetEvent("illenium-appearance:client:importOutfitCode", function()
                 lib.notify({
                     title = _L("outfits.import.success.title"),
                     description = _L("outfits.import.success.description"),
-                    type = "success",
+                    type = 'success',
                     position = Config.NotifyOptions.position
                 })
             else
                 lib.notify({
                     title = _L("outfits.import.failure.title"),
                     description = _L("outfits.import.failure.description"),
-                    type = "error",
+                    type = 'error',
                     position = Config.NotifyOptions.position
                 })
             end
@@ -224,7 +224,7 @@ RegisterNetEvent("illenium-appearance:client:generateOutfitCode", function(id)
             lib.notify({
                 title = _L("outfits.generate.failure.title"),
                 description = _L("outfits.generate.failure.description"),
-                type = "error",
+                type = 'error',
                 position = Config.NotifyOptions.position
             })
             return
@@ -271,7 +271,7 @@ RegisterNetEvent("illenium-appearance:client:saveOutfit", function()
                 lib.notify({
                     title = _L("outfits.save.failure.title"),
                     description = _L("outfits.save.failure.description"),
-                    type = "error",
+                    type = 'error',
                     position = Config.NotifyOptions.position
                 })
                 return
@@ -302,7 +302,7 @@ RegisterNetEvent('illenium-appearance:client:updateOutfit', function(outfitID)
             lib.notify({
                 title = _L("outfits.update.failure.title"),
                 description = _L("outfits.update.failure.description"),
-                type = "error",
+                type = 'error',
                 position = Config.NotifyOptions.position
             })
             return
@@ -356,6 +356,8 @@ local function RegisterUpdateOutfitMenu(id, parent, outfits)
     for i = 1, #outfits, 1 do
         updateOutfitMenu.options[#updateOutfitMenu.options + 1] = {
             title = outfits[i].name,
+            icon = 'fa-shirt',
+            iconColor = Config.IconColors,            
             description = outfits[i].model,
             event = "illenium-appearance:client:updateOutfit",
             args = outfits[i].id
@@ -378,7 +380,9 @@ local function RegisterGenerateOutfitCodeMenu(id, parent, outfits)
     }
     for i = 1, #outfits, 1 do
         generateOutfitCodeMenu.options[#generateOutfitCodeMenu.options + 1] = {
-            title = outfits[i].name,
+            title = outfits[i].name,            
+            icon = 'fa-shirt',
+            iconColor = Config.IconColors,
             description = outfits[i].model,
             event = "illenium-appearance:client:generateOutfitCode",
             args = outfits[i].id
@@ -403,6 +407,8 @@ local function RegisterDeleteOutfitMenu(id, parent, outfits, deleteEvent)
     for i = 1, #outfits, 1 do
         deleteOutfitMenu.options[#deleteOutfitMenu.options + 1] = {
             title = string.format(_L("outfits.delete.item.title"), outfits[i].name),
+            icon = 'fa-trash-can',
+            iconColor = Config.IconColors,
             description = string.format(_L("outfits.delete.item.description"), outfits[i].model, (outfits[i].gender and (" - Gender: " .. outfits[i].gender) or "")),
             event = deleteEvent,
             args = outfits[i].id
@@ -551,31 +557,43 @@ function OpenMenu(isPedMenu, menuType, menuData)
     local outfitMenuItems = {
         {
             title = _L("outfits.change.title"),
+            icon = 'fa-arrow-right-arrow-left',
+            iconColor = Config.IconColors,
             description = _L("outfits.change.pDescription"),
             menu = changeOutfitMenuID
         },
         {
             title = _L("outfits.update.title"),
+            icon = 'fa-upload',
+            iconColor = Config.IconColors,
             description = _L("outfits.update.description"),
             menu = updateOutfitMenuID
         },
         {
             title = _L("outfits.save.menuTitle"),
+            icon = 'fa-pen-to-square',
+            iconColor = Config.IconColors,
             description = _L("outfits.save.description"),
             event = "illenium-appearance:client:saveOutfit"
         },
         {
             title = _L("outfits.generate.title"),
+            icon = 'fa-file-pen',
+            iconColor = Config.IconColors,
             description = _L("outfits.generate.description"),
             menu = generateOutfitCodeMenuID
         },
         {
             title = _L("outfits.delete.title"),
+            icon = 'fa-trash-can',
+            iconColor = Config.IconColors,
             description = _L("outfits.delete.mDescription"),
             menu = deleteOutfitMenuID
         },
         {
             title = _L("outfits.import.menuTitle"),
+            icon = 'fa-download',
+            iconColor = Config.IconColors,
             description = _L("outfits.import.description"),
             event = "illenium-appearance:client:importOutfitCode"
         }
@@ -588,6 +606,8 @@ function OpenMenu(isPedMenu, menuType, menuData)
         mainMenu.title = _L("clothing.options.title")
         menuItems[#menuItems + 1] = {
             title = header,
+            icon = 'fa-shirt',
+            iconColor = Config.IconColors,
             description = _L("clothing.options.description"),
             event = "illenium-appearance:client:openClothingShop",
             args = isPedMenu
@@ -604,6 +624,8 @@ function OpenMenu(isPedMenu, menuType, menuData)
         mainMenu.title = _L("clothing.outfits.title")
         menuItems[#menuItems + 1] = {
             title = _L("clothing.outfits.civilian.title"),
+            icon = 'fa-shirt',
+            iconColor = Config.IconColors,
             description = _L("clothing.outfits.civilian.description"),
             event = "illenium-appearance:client:reloadSkin",
             args = true
@@ -614,6 +636,8 @@ function OpenMenu(isPedMenu, menuType, menuData)
 
         menuItems[#menuItems + 1] = {
             title = _L("jobOutfits.title"),
+            icon = 'fa-briefcase',
+            iconColor = Config.IconColors,
             description = _L("jobOutfits.description"),
             menu = workOutfitsMenuID
         }
@@ -651,7 +675,7 @@ RegisterNetEvent("illenium-appearance:client:changeOutfit", function(data)
                 lib.notify({
                     title = _L("outfits.change.failure.title"),
                     description = _L("outfits.change.failure.description"),
-                    type = "error",
+                    type = 'error',
                     position = Config.NotifyOptions.position
                 })
             end
@@ -684,7 +708,7 @@ RegisterNetEvent("illenium-appearance:client:DeleteManagementOutfit", function(i
     lib.notify({
         title = _L("outfits.delete.management.success.title"),
         description = _L("outfits.delete.management.success.description"),
-        type = "success",
+        type = 'success',
         position = Config.NotifyOptions.position
     })
 end)
@@ -694,7 +718,7 @@ RegisterNetEvent("illenium-appearance:client:deleteOutfit", function(id)
     lib.notify({
         title = _L("outfits.delete.success.title"),
         description = _L("outfits.delete.success.description"),
-        type = "success",
+        type = 'success',
         position = Config.NotifyOptions.position
     })
 end)
@@ -712,7 +736,7 @@ RegisterNetEvent("illenium-appearance:client:reloadSkin", function(bypassChecks)
         lib.notify({
             title = _L("commands.reloadskin.failure.title"),
             description = _L("commands.reloadskin.failure.description"),
-            type = "error",
+            type = 'error',
             position = Config.NotifyOptions.position
         })
         return
@@ -738,7 +762,7 @@ RegisterNetEvent("illenium-appearance:client:ClearStuckProps", function()
         lib.notify({
             title = _L("commands.clearstuckprops.failure.title"),
             description = _L("commands.clearstuckprops.failure.description"),
-            type = "error",
+            type = 'error',
             position = Config.NotifyOptions.position
         })
         return

@@ -42,13 +42,13 @@ local function onStoreEnter(data)
         }
         local prefix = Config.UseRadialMenu and "" or "[E] "
         if currentZone.name == "clothing" then
-            lib.showTextUI(prefix .. string.format(_L("textUI.clothing"), Config.ClothingCost), Config.TextUIOptions)
+            lib.showTextUI(prefix .. string.format(_L("textUI.clothing"), Config.ClothingCost), {position = Config.TextUIOptions.position, icon = Config.TextUIOptions.clothingIcon, iconColor = Config.IconColors})
         elseif currentZone.name == "barber" then
-            lib.showTextUI(prefix .. string.format(_L("textUI.barber"), Config.BarberCost), Config.TextUIOptions)
+            lib.showTextUI(prefix .. string.format(_L("textUI.barber"), Config.BarberCost), {position = Config.TextUIOptions.position, icon = Config.TextUIOptions.barberIcon, iconColor = Config.IconColors})
         elseif currentZone.name == "tattoo" then
-            lib.showTextUI(prefix .. string.format(_L("textUI.tattoo"), Config.TattooCost), Config.TextUIOptions)
+            lib.showTextUI(prefix .. string.format(_L("textUI.tattoo"), Config.TattooCost), {position = Config.TextUIOptions.position, icon = Config.TextUIOptions.tattooIcon, iconColor = Config.IconColors})
         elseif currentZone.name == "surgeon" then
-            lib.showTextUI(prefix .. string.format(_L("textUI.surgeon"), Config.SurgeonCost), Config.TextUIOptions)
+            lib.showTextUI(prefix .. string.format(_L("textUI.surgeon"), Config.SurgeonCost), {position = Config.TextUIOptions.position, icon = Config.TextUIOptions.surgeonIcon, iconColor = Config.IconColors})
         end
         Radial.AddOption(currentZone)
     end
@@ -66,7 +66,7 @@ local function onClothingRoomEnter(data)
                 index = index
             }
             local prefix = Config.UseRadialMenu and "" or "[E] "
-            lib.showTextUI(prefix .. _L("textUI.clothingRoom"), Config.TextUIOptions)
+            lib.showTextUI(prefix .. _L("textUI.clothingRoom"), {position = Config.TextUIOptions.position, icon = Config.TextUIOptions.clothingroomIcon, iconColor = Config.IconColors})
             Radial.AddOption(currentZone)
         end
     end
@@ -83,7 +83,7 @@ local function onPlayerOutfitRoomEnter(data)
             index = index
         }
         local prefix = Config.UseRadialMenu and "" or "[E] "
-        lib.showTextUI(prefix .. _L("textUI.playerOutfitRoom"), Config.TextUIOptions)
+        lib.showTextUI(prefix .. _L("textUI.playerOutfitRoom"), {position = Config.TextUIOptions.position, icon = Config.TextUIOptions.clothingroomIcon, iconColor = Config.IconColors})
         Radial.AddOption(currentZone)
     end
 end

@@ -110,7 +110,7 @@ lib.callback.register("illenium-appearance:server:payForTattoo", function(source
         lib.notify(src, {
             title = _L("purchase.tattoo.success.title"),
             description = string.format(_L("purchase.tattoo.success.description"), tattoo.label, cost),
-            type = "success",
+            type = 'success',
             position = Config.NotifyOptions.position
         })
         return true
@@ -118,7 +118,7 @@ lib.callback.register("illenium-appearance:server:payForTattoo", function(source
         lib.notify(src, {
             title = _L("purchase.tattoo.failure.title"),
             description = _L("purchase.tattoo.failure.description"),
-            type = "error",
+            type = 'error',
             position = Config.NotifyOptions.position
         })
         return false
@@ -177,14 +177,14 @@ RegisterServerEvent("illenium-appearance:server:chargeCustomer", function(shopTy
         lib.notify(src, {
             title = _L("purchase.store.success.title"),
             description = string.format(_L("purchase.store.success.description"), money, shopType),
-            type = "success",
+            type = 'success',
             position = Config.NotifyOptions.position
         })
     else
         lib.notify(src, {
             title = _L("purchase.store.failure.title"),
             description = _L("purchase.store.failure.description"),
-            type = "error",
+            type = 'error',
             position = Config.NotifyOptions.position
         })
     end
@@ -211,7 +211,7 @@ RegisterNetEvent("illenium-appearance:server:saveOutfit", function(name, model, 
         lib.notify(src, {
             title = _L("outfits.save.success.title"),
             description = string.format(_L("outfits.save.success.description"), name),
-            type = "success",
+            type = 'success',
             position = Config.NotifyOptions.position
         })
     end
@@ -239,7 +239,7 @@ RegisterNetEvent("illenium-appearance:server:updateOutfit", function(id, model, 
         lib.notify(src, {
             title = _L("outfits.update.success.title"),
             description = string.format(_L("outfits.update.success.description"), outfitName),
-            type = "success",
+            type = 'success',
             position = Config.NotifyOptions.position
         })
     end
@@ -254,8 +254,8 @@ RegisterNetEvent("illenium-appearance:server:saveManagementOutfit", function(out
 
     lib.notify(src, {
         title = _L("outfits.save.success.title"),
-            description = string.format(_L("outfits.save.success.description"), outfitData.Name),
-        type = "success",
+        description = string.format(_L("outfits.save.success.description"), outfitData.Name),
+        type = 'success',
         position = Config.NotifyOptions.position
     })
 end)
@@ -323,7 +323,7 @@ if Config.EnablePedMenu then
                 lib.notify(source, {
                     title = _L("commands.pedmenu.failure.title"),
                     description = _L("commands.pedmenu.failure.description"),
-                    type = "error",
+                    type = 'error',
                     position = Config.NotifyOptions.position
                 })
                 return
@@ -351,4 +351,4 @@ lib.addCommand("clearstuckprops", { help = _L("commands.clearstuckprops.title") 
     TriggerClientEvent("illenium-appearance:client:ClearStuckProps", source)
 end)
 
-lib.versionCheck("iLLeniumStudios/illenium-appearance")
+--lib.versionCheck("iLLeniumStudios/illenium-appearance")

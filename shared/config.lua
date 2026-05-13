@@ -2,6 +2,8 @@ Config = {}
 
 Config.Debug = false
 
+Config.IconColors = '#3dd8ec' -- e.g. #ffffff
+
 Config.ClothingCost = 100
 Config.BarberCost = 100
 Config.TattooCost = 100
@@ -17,11 +19,16 @@ Config.AsynchronousLoading = false -- Change this to false if you want the NUI d
 Config.UseTarget = false
 
 Config.TextUIOptions = {
-    position = "left-center"
+    position = "left-center",
+    clothingIcon = 'fa-shirt',
+    barberIcon = 'fa-scissors',
+    tattooIcon = 'fa-paintbrush',
+    surgeonIcon = 'fa-user-doctor',
+    clothingroomIcon = 'fa-shirt',
 }
 
 Config.NotifyOptions = {
-    position = "top-right"
+    position = "top-right",
 }
 
 Config.OutfitCodeLength = 10
