@@ -2,7 +2,7 @@ Config = {}
 
 Config.Debug = false
 
-Config.IconColors = '#3dd8ec' -- e.g. #ffffff
+Config.IconColors = '' -- e.g. #ffffff
 
 Config.ClothingCost = 100
 Config.BarberCost = 100
