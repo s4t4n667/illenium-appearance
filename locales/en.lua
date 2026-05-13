@@ -256,7 +256,7 @@ Locales["en"] = {
             }
         },
         manage = {
-            title = "👔 | Manage %s Outfits"
+            title = "Manage %s Outfits"
         }
     },
     jobOutfits = {
@@ -276,11 +276,11 @@ Locales["en"] = {
         title = "Buy Clothing - $%d",
         titleNoPrice = "Change Clothing",
         options = {
-            title = "👔 | Clothing Store Options",
+            title = "Clothing Store Options",
             description = "Pick from a wide range of items to wear"
         },
         outfits = {
-            title = "👔 | Outfit Options",
+            title = "Outfit Options",
             civilian = {
                 title = "Civilian Outfit",
                 description = "Put on your clothes"
