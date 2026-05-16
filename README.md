@@ -6,6 +6,7 @@ A replacement for clothing resources for various frameworks.
 - Added icons to every menu
 - Added global icon colour option to config
 - Added textUI icon options to config
+- Added lib dialog box to confirm outfit deletion instead of insta-deletion
 
 <div align='center'><h1><a href='https://docs.illenium.dev/free-resources/illenium-appearance/installation/'>Documentation</a></h3></div>
 <br>
