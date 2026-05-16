@@ -407,13 +407,24 @@ local function RegisterDeleteOutfitMenu(id, parent, outfits, deleteEvent)
     end)
 
     for i = 1, #outfits, 1 do
+        local outfit = outfits[i]
+
         deleteOutfitMenu.options[#deleteOutfitMenu.options + 1] = {
-            title = string.format(_L("outfits.delete.item.title"), outfits[i].name),
+            title = string.format(_L("outfits.delete.item.title"), outfit.name),
             icon = 'fa-trash-can',
             iconColor = Config.IconColors,
-            description = string.format(_L("outfits.delete.item.description"), outfits[i].model, (outfits[i].gender and (" - Gender: " .. outfits[i].gender) or "")),
-            event = deleteEvent,
-            args = outfits[i].id
+            description = string.format(_L("outfits.delete.item.description"), outfit.model, (outfit.gender and (" - Gender: " .. outfit.gender) or "")),
+            onSelect = function()
+                local check = lib.alertDialog({
+                    header = 'Delete Outfit',
+                    content = ('Are you sure you want to delete "%s"?'):format(outfit.name),
+                    centered = true,
+                    cancel = true
+                })
+                if check == 'confirm' then
+                    TriggerEvent(deleteEvent, outfit.id)
+                end
+            end
         }
     end
 
